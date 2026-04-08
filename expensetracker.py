@@ -4,7 +4,6 @@ import os
 
 FILE_NAME = "expense.csv"
 
-# ---------------- ADD EXPENSE ----------------
 def add_expense():
     date = input("Enter date (DD-MM-YYYY): ")
 
@@ -39,7 +38,6 @@ def add_expense():
 
     print("Expense added successfully!")
 
-# ---------------- VIEW ----------------
 def view_expenses():
     if not os.path.exists(FILE_NAME):
         print("No data found.")
@@ -50,7 +48,6 @@ def view_expenses():
         for row in reader:
             print(row)
 
-# ---------------- MONTHLY SUMMARY ----------------
 def monthly_summary():
     if not os.path.exists(FILE_NAME):
         print("No data found.")
@@ -68,7 +65,6 @@ def monthly_summary():
 
     print(f"Total expense for {month}: ₹{total:.2f}")
 
-# ---------------- CATEGORY ANALYSIS ----------------
 def category_analysis():
     if not os.path.exists(FILE_NAME):
         print("No data found.")
@@ -95,7 +91,6 @@ def category_analysis():
         max_cat = max(categories, key=categories.get)
         print(f"\nHighest spending category: {max_cat} (₹{categories[max_cat]:.2f})")
 
-# ---------------- PLOT ----------------
 def plot_expenses():
     if not os.path.exists(FILE_NAME):
         print("No data found.")
@@ -126,7 +121,6 @@ def plot_expenses():
     plt.title("Category-wise Expense Distribution")
     plt.show()
 
-# ---------------- INSIGHTS ----------------
 def insights():
     if not os.path.exists(FILE_NAME):
         print("No data found.")
@@ -156,7 +150,6 @@ def insights():
     print("\nSuggestion:")
     print(f"Try reducing expenses in '{max_cat}' category to save more money.")
 
-# ---------------- MAIN ----------------
 def main():
     while True:
         print("\n--- Smart Expense Tracker ---")
